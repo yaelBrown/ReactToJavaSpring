@@ -19,19 +19,19 @@ Axios -  Promise based http request library which allows us to interface with re
       });
 */
 
+let resp = [];
+
 export default class People extends Component {
   
   state = {
-    persons: []
+    persons: ["apple"]
   };
 
   componentDidMount = () => {
     axios('http://localhost:8080/people')
       .then(res => {
-        console.log(res)
-        this.setState({
-          persons: res.data.map(person => person.name)
-        })
+        resp = res.data;
+        console.log(res.data);
       });
   };
 
@@ -39,6 +39,7 @@ export default class People extends Component {
     return (
       <div>
         <h1>People Component</h1>
+        <p>{this.state.persons[0]}</p>
       </div>
     )
   }
