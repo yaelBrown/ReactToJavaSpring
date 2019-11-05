@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import People from './People.js';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <People/>
     </div>
   );
 }
